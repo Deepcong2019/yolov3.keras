@@ -1,4 +1,4 @@
-# keras-yolo3
+# yolov3.keras
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
