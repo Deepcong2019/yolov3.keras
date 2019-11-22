@@ -21,7 +21,7 @@
            
 # 具体操作步骤：
 
-## 执行训练操作步骤
+## 一、执行训练操作步骤
 
 ### 1、下载数据集
 
@@ -35,7 +35,7 @@
    |　　　　|-- instances_train2017.json<br>
    |　　　　|--instances_val2017.json
    
-## 计算mAP操作步骤   
+## 二、计算mAP操作步骤   
 
 ### 1、json转xml格式（以val2017为例）
 
@@ -53,3 +53,11 @@
 ### 4、计算mAP
 
    * 运行 python mAP/main.py，计算模型在验证集val2017的mAP。
+   
+ ## 三、对单张图片或者视频进行检测
+ 
+ ### 1、对单张图片进行检测
+   
+   * 运行 python yolo_video.py --image，对单张图片进行检测。
+ ### 2、对视频进行检测
+   * 运行 python yolo_video.py --input xxx.mp4 --output yyy.mp4
