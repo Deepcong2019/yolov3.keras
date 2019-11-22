@@ -26,8 +26,8 @@
    * coco数据集下载地址：https://pan.baidu.com/s/1bkZqLk_uB0-KeNdFndfwMA 密码:l1yl
    * voc数据集下载地址： https://pan.baidu.com/s/1SKZcQDUdKTDx95mfFugD3Q  密码:hr9e
    * 以coco数据集为例存放路径为：<br>
-   | coco<br>
-   | train2017<br>
+   |-- coco<br>
+   |    |--train2017<br>
    |    |-- val2017<br>
    |  |-- annotations<br>
    |        |-- instances_train2017.json<br>
