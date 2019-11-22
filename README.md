@@ -66,7 +66,7 @@
 ### 2、xml格式转为txt
 
    * 运行 python mAP/scripts/extra/convert_gt_xml.py，将xml转为txt。
-   * 形如 class_name left top right bottom
+   * 形如: diningtable 0.6909865140914917 10 214 405 412
       
 ### 3、对mAP/input/images-optional中的图片进行检测
 
