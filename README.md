@@ -67,7 +67,7 @@
    
 ### 2、xml格式转为txt
 
-   * 运行 python mAP/scripts/extra/convert_gt_xml.py，将xml转为txt。
+   * 运行 python mAP/scripts/extra/convert_gt_xml.py，将xml转为txt
    * 形如: diningtable 0.6909865140914917 10 214 405 412
       
 ### 3、对mAP/input/images-optional中的图片进行检测
@@ -77,12 +77,13 @@
   
 ### 4、计算mAP
 
-   * 运行 python mAP/main.py，计算模型在验证集val2017的mAP。
+   * 运行 python mAP/main.py，计算模型在验证集val2017的mAP
    
  ## 三、对单张图片或者视频进行检测
  
  ### 1、对单张图片进行检测
    
-   * 运行 python yolo_video.py --image，对单张图片进行检测。
+   * 运行 python yolo_video.py --image，对单张图片进行检测
+   
  ### 2、对视频进行检测
    * 运行 python yolo_video.py --input xxx.mp4 --output yyy.mp4
