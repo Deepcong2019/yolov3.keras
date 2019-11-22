@@ -72,7 +72,8 @@
       
 ### 3、对mAP/input/images-optional中的图片进行检测
 
-   * 检测结果的txt文本存入mAP/input/detection-results，图片上直接标注结果存入mAP/input/image_detect_results。
+   * 运行 python yolo_test_write.py，对mAP/input/images-optional中4952张图片进行检测
+   * 检测结果的txt文本存入mAP/input/detection-results，图片上直接标注结果存入mAP/input/image_detect_results
   
 ### 4、计算mAP
 
