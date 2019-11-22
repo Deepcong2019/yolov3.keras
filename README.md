@@ -56,9 +56,9 @@
 
    * 运行 python train.py，进行训练
    
-## 二、计算mAP操作步骤   
+## 二、计算mAP操作步骤（以val2017为例） 
 
-### 1、json转xml格式（以val2017为例）
+### 1、json转xml格式
 
    * 运行 python json2xml.py
    * 运行之后，生成的图片存入mAP/input/images-optional，共4952张，生成的xml存入mAP/input/ground-truth
