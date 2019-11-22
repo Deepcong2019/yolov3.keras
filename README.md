@@ -1,6 +1,6 @@
-* 本仓库在https://github.com/qqwweee/keras-yolo3 ，和https://github.com/Cartucho/mAP 的基础上稍作修改，实现yolov3的训练、验证、测试。（基于coco2017的训练集train2017（总共118287张图片，含有目标的图片共117266张，共860001个目标框。），验证集val2017（总共5000张图片，其中4952张含有目标，共有36781个目标框））。
+* 本仓库在https://github.com/qqwweee/keras-yolo3和https://github.com/Cartucho/mAP 的基础上稍作修改，实现yolov3的训练、验证、测试。（基于coco2017的训练集train2017（总共118287张图片，含有目标的图片共117266张，共860001个目标框。），验证集val2017（总共5000张图片，其中4952张含有目标，共有36781个目标框））。
 
-2、coco数据集目标检测含有80个目标种类：
+* coco数据集目标检测含有80个目标种类：
 
      names_list = ['person','bicycle', 'car', 'motorbike', 'aeroplane', 'bus', 'train', 
                    'truck', 'boat', 'trafficlight', 'firehydrant', 'stopsign', 'parkingmeter', 
@@ -19,7 +19,7 @@
                  51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 67,
                  70, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 84,85, 86, 87, 88, 89, 90]
            
-3、具体操作步骤：
+* 具体操作步骤：
 
    下载数据集：
 
