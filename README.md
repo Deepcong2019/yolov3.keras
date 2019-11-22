@@ -35,6 +35,27 @@
    |　　　　|-- instances_train2017.json<br>
    |　　　　|--instances_val2017.json
    
+### 2、 生成训练所要的train.txt
+
+   * 运行 python coco_annotation.py，生成train.txt
+   
+### 3、生成适合数据集的anchors
+
+   * 运行 python kmeans.py，生成适合数据集的anchors，保存在model_data/yolo_anchors.txt中
+   
+### 4、下载预训练模型
+
+   * wget https://pjreddie.com/media/files/yolov3.weights 
+      
+### 5、将模型转化为keras的h5模型格式
+
+   * 运行 python convert.py yolov3.cfg yolov3.weights model_data/yolo.h5
+   * 或者直接跳跃步骤4和5，直接从百度网盘下载h5模型：链接：https://pan.baidu.com/s/1Ok-8gSGvhzRdjXNL_W0ZGw 密码：x7qn
+   
+### 6、执行训练
+
+   * 运行 python train.py，进行训练
+   
 ## 二、计算mAP操作步骤   
 
 ### 1、json转xml格式（以val2017为例）
