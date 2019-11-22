@@ -27,9 +27,9 @@
    * voc数据集下载地址： https://pan.baidu.com/s/1SKZcQDUdKTDx95mfFugD3Q  密码:hr9e
    * 以coco数据集为例存放路径为：<br>
    |-- coco<br>
-   | |-- train2017<br>
-   | |-- val2017<br>
-   | |-- annotations<br>
-   |       |-- instances_train2017.json<br>
-   |       |--instances_val2017.json
+   |  |-- train2017<br>
+   |  |-- val2017<br>
+   |  |-- annotations<br>
+   |        |-- instances_train2017.json<br>
+   |        |--instances_val2017.json
             
