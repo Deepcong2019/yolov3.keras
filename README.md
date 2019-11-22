@@ -80,7 +80,7 @@
    * 运行 python mAP/main.py，计算模型在验证集val2017的mAP
    * 计算结果如图：
    <p align="center">
-  <img src="https://github.com/Deepcong2019/yolov3.keras/blob/master/mAP/map_result.png" width="450" height="300" />
+  <img src="https://github.com/Deepcong2019/yolov3.keras/blob/master/mAP/map_result.png" >
 </p>
    
  ## 三、对单张图片或者视频进行检测
