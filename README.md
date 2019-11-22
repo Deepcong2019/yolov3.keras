@@ -37,19 +37,19 @@
    
 ## 计算mAP操作步骤   
 
-### 2、json转xml格式（以val2017为例）
+### 1、json转xml格式（以val2017为例）
 
    * 运行 python json2xml.py
    * 运行之后，生成的图片存入mAP/input/images-optional，共4952张，生成的xml存入mAP/input/ground-truth
    
-### 3、xml格式转为txt
+### 2、xml格式转为txt
 
    * 运行 python mAP/scripts/extra/convert_gt_xml.py，将xml转为txt，形如 <class_name> <left> <top> <right> <bottom>
       
-### 4、对mAP/input/images-optional中的图片进行检测
+### 3、对mAP/input/images-optional中的图片进行检测
 
    * 检测结果的txt文本存入mAP/input/detection-results，图片上直接标注结果存入mAP/input/image_detect_results。
   
-### 5、计算mAP
+### 4、计算mAP
 
    * 运行 python mAP/main.py，计算模型在验证集val2017的mAP。
