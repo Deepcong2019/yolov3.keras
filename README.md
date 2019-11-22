@@ -65,7 +65,7 @@
    
 ### 2、xml格式转为txt
 
-   * 运行 python mAP/scripts/extra/convert_gt_xml.py，将xml转为txt，形如 <class_name> <left> <top> <right> <bottom>
+   * 运行 python mAP/scripts/extra/convert_gt_xml.py，将xml转为txt，形如<class_name> <left> <top> <right> <bottom>
       
 ### 3、对mAP/input/images-optional中的图片进行检测
 
