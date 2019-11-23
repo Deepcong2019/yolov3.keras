@@ -91,3 +91,9 @@
    
  ### 2、对视频进行检测
    * 运行 python yolo_video.py --input xxx.mp4 --output yyy.mp4
+   
+ ### 3、视频检测结果演示
+ 
+ <p align="center">
+  <img src="https://github.com/Deepcong2019/yolov3.keras/blob/master/images/video_detect.gif" >
+</p> 
