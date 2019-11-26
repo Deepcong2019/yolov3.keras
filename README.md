@@ -100,5 +100,5 @@
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starcharts.herokuapp.com/Deepcong2019/yolov3.keras.svg)](https://starcharts.herokuapp.com/Deepcong2019/yolov3.keras)
+[![Stargazers over time](https://starchart.cc/Deepcong2019/yolov3.keras.svg)](https://starchart.cc/Deepcong2019/yolov3.keras)
       
