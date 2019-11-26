@@ -25,6 +25,10 @@
 
 ## 一、执行训练操作步骤
 
+### 环境配置
+
+   * pip install -i https://pypi.douban.com/simple/ -r requirement.txt
+
 ### 1、下载数据集
 
    * coco2017数据集下载地址：https://pan.baidu.com/s/1bkZqLk_uB0-KeNdFndfwMA 密码:l1yl
