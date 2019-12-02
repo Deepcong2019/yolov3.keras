@@ -7,7 +7,7 @@ import keras.backend as K
 from keras.layers import Input, Lambda
 from keras.models import Model
 from keras.optimizers import Adam
-from keras.callbacks import TensorBoard, ModelCheckpoint, ReduceLROnPlateau, EarlyStopping
+from keras.callbacks import TensorBoard, ModelCheckpoint, ReduceLROnPlateau, EarlyStopping,csv_logger
 
 from yolo3.model import preprocess_true_boxes, yolo_body, tiny_yolo_body, yolo_loss
 from yolo3.utils import get_random_data
@@ -38,6 +38,9 @@ def _main():
         monitor='val_loss', save_weights_only=True, save_best_only=True, period=3)
     reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=3, verbose=1)
     early_stopping = EarlyStopping(monitor='val_loss', min_delta=0, patience=10, verbose=1)
+    csv_logger = CSVLogger(filename=log_dir + 'yolov3_training_log.csv',
+                           separator=',',
+                           append=True)
 
     
     with open(train_annotation_path) as f:
@@ -67,7 +70,7 @@ def _main():
                 validation_steps=max(1, num_val//batch_size),
                 epochs=100000,
                 initial_epoch=0,
-                callbacks=[logging, checkpoint,reduce_lr,early_stopping])
+                callbacks=[logging, checkpoint,csv_logger,reduce_lr,early_stopping])
         model.save_weights(log_dir + 'trained_weights_stage_1.h5')
 
 
