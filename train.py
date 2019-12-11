@@ -7,7 +7,7 @@ import keras.backend as K
 from keras.layers import Input, Lambda
 from keras.models import Model
 from keras.optimizers import Adam
-from keras.callbacks import TensorBoard, ModelCheckpoint, ReduceLROnPlateau, EarlyStopping,csv_logger
+from keras.callbacks import TensorBoard, ModelCheckpoint,EarlyStopping, CSVLogger,LearningRateScheduler
 
 from yolo3.model import preprocess_true_boxes, yolo_body, tiny_yolo_body, yolo_loss
 from yolo3.utils import get_random_data
@@ -30,18 +30,19 @@ def _main():
         model = create_tiny_model(input_shape, anchors, num_classes,
             freeze_body=2, weights_path='model_data/tiny_yolo_weights.h5')
     else:
-        model = create_model(input_shape, anchors, num_classes,load_pretrained=False,
-            freeze_body=3, weights_path='model_data/yolo.h5') # make sure you know what you freeze
+        model = create_model(input_shape, anchors, num_classes,load_pretrained = True,
+            freeze_body=3, weights_path='model_data/darknet53_weights.h5') # make sure you know what you freeze
 
     logging = TensorBoard(log_dir=log_dir)
-    checkpoint = ModelCheckpoint(log_dir + 'ep{epoch:03d}-loss{loss:.3f}-val_loss{val_loss:.3f}.h5',
-        monitor='val_loss', save_weights_only=True, save_best_only=True, period=3)
-    reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=3, verbose=1)
-    early_stopping = EarlyStopping(monitor='val_loss', min_delta=0, patience=10, verbose=1)
+    checkpoint = ModelCheckpoint(log_dir + 'yolov3_keras.h5',
+        monitor='val_loss', verbose=1, save_weights_only=True, save_best_only=True, period=1)
+    learning_rate_scheduler = LearningRateScheduler(schedule=lr_schedule,
+                                                verbose=1)
+    
+    #early_stopping = EarlyStopping(monitor='val_loss', min_delta=0, patience=10, verbose=1)
     csv_logger = CSVLogger(filename=log_dir + 'yolov3_training_log.csv',
-                           separator=',',
-                           append=True)
-
+                       separator=',',
+                       append=True)
     
     with open(train_annotation_path) as f:
         lines_train = f.readlines()
@@ -65,15 +66,23 @@ def _main():
         batch_size = 4
         print('Train on {} samples, val on {} samples, with batch size {}.'.format(num_train, num_val, batch_size))
         model.fit_generator(data_generator(lines_train, batch_size, input_shape, anchors, num_classes),
-                steps_per_epoch=max(1, num_train//batch_size),
+                steps_per_epoch=max(1, int(num_train/batch_size)),
                 validation_data=data_generator(lines_val, batch_size, input_shape, anchors, num_classes),
-                validation_steps=max(1, num_val//batch_size),
+                validation_steps=max(1, int(num_val/batch_size)),
                 epochs=100000,
                 initial_epoch=0,
-                callbacks=[logging, checkpoint,csv_logger,reduce_lr,early_stopping])
-        model.save_weights(log_dir + 'trained_weights_stage_1.h5')
+                callbacks=[logging, checkpoint,csv_logger,learning_rate_scheduler,
+                           #early_stopping
+                           ])
 
 
+def lr_schedule(epoch):
+    if epoch < 30:
+        return 0.001
+    elif epoch < 50:
+        return 0.0005
+    else:
+        return 0.0001
 
 
 def get_classes(classes_path):
@@ -91,7 +100,7 @@ def get_anchors(anchors_path):
     return np.array(anchors).reshape(-1, 2)
 
 
-def create_model(input_shape, anchors, num_classes, load_pretrained=False, freeze_body=2,
+def create_model(input_shape, anchors, num_classes, load_pretrained=True, freeze_body=2,
             weights_path='model_data/yolo_weights.h5'):
     '''create the training model'''
     K.clear_session() # get a new session
