@@ -1,6 +1,6 @@
 # 本人为小白，参考大神巨作，进行复现，有什么问题请大家留言讨论。
 
-* 本仓库在https://github.com/qqwweee/keras-yolo3 和 https://github.com/Cartucho/mAP 的基础上稍作修改，实现yolov3的训练、验证、测试。（基于coco2017的训练集train2017（总共118287张图片，含有目标的图片共117266张，共860001个目标框），验证集val2017（总共5000张图片，其中4952张含有目标，共有36781个目标框））。
+* 本仓库在https://github.com/qqwweee/keras-yolo3 和 https://github.com/Cartucho/mAP 的基础上稍作修改，机器配置1080ti\tf_gpu1.4.0\cuda8.0\cudnn6,实现yolov3的训练、验证、测试。（基于coco2017的训练集train2017（总共118287张图片，含有目标的图片共117266张，共860001个目标框），验证集val2017（总共5000张图片，其中4952张含有目标，共有36781个目标框））。
 
 * coco数据集目标检测含有80个目标种类：
 
