@@ -61,8 +61,8 @@ names_list = ['person','bicycle', 'car', 'motorbike', 'aeroplane', 'bus', 'train
 
 
 im_ext = 'jpg'
-COCO_images = '/media/cong/娱乐/coco2017/train2017/'
-Json_addr = '/media/cong/娱乐/coco2017/annotations/instances_train2017.json'
+COCO_images = '/media/cong/娱乐/coco2017/val2017/'
+Json_addr = '/media/cong/娱乐/coco2017/annotations/instances_val2017.json'
 im_num = 0
 ob_count = 0
 im_pairs = dict()
